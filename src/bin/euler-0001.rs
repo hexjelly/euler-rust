@@ -3,7 +3,6 @@
 /// Find the sum of all the multiples of 3 or 5 below 1000.
 fn multiple_of_any(min: u64, max: u64, multiple_predicates: &[u64]) -> u64 {
   (min..max)
-    .into_iter()
     .filter(|n| multiple_predicates.iter().any(|p| n % p == 0))
     .sum()
 }
@@ -14,5 +13,5 @@ fn main() {
 
 #[test]
 fn euler_0001() {
-  assert_eq!(multiple_of_any(0, 1000, &[3, 5]), 233168);
+  assert_eq!(multiple_of_any(0, 1000, &[3, 5]), 233_168);
 }
